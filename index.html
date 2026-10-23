@@ -3,115 +3,419 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Independent Developer — small sites & automations</title>
-<meta name="description" content="Fixed-scope websites and automations. 48-hour delivery. Source code included.">
+<title>Mohammed Mustafa — websites and automations, fixed price</title>
+<meta name="description" content="Independent developer in Bengaluru. One-page websites, site rescues and small automations. Fixed price, 48-hour delivery, preview before you pay.">
+<meta name="theme-color" content="#f6f4ef">
 <style>
-  :root{--ink:#0c1117;--muted:#5b6673;--line:#e3e8ee;--bg:#fbfcfd;--accent:#1d4ed8;--soft:#eef3ff}
+  :root{
+    --paper:#f6f4ef; --card:#fffdf8; --ink:#101413; --muted:#5c625f; --line:#e0dbd0;
+    --accent:#17493f; --accent-soft:#e6efe9; --warm:#b4612f;
+    --serif:ui-serif,Georgia,"Times New Roman",serif;
+    --sans:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --radius:16px;
+  }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
-  header{border-bottom:1px solid var(--line);padding:18px 0;position:sticky;top:0;background:rgba(251,252,253,.9);backdrop-filter:blur(8px);z-index:5}
-  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
-  .brand{font-weight:650;letter-spacing:-.01em}
-  .brand span{color:var(--accent)}
-  nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:18px}
-  nav a:hover{color:var(--ink)}
-  h1{font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.03em;margin:64px 0 16px;max-width:17ch}
-  h1 em{font-style:normal;color:var(--accent)}
-  .lede{font-size:19px;color:var(--muted);max-width:56ch;margin:0 0 28px}
-  .cta{display:inline-flex;gap:10px;align-items:center;background:var(--ink);color:#fff;text-decoration:none;padding:13px 20px;border-radius:10px;font-weight:600;font-size:15px}
-  .cta.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
-  .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:26px;color:var(--muted);font-size:13px}
-  .meta b{color:var(--ink);font-weight:600}
-  section{padding:64px 0;border-top:1px solid var(--line)}
-  h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:0 0 24px;font-weight:600}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
-  .card h3{margin:0 0 6px;font-size:17px;letter-spacing:-.01em}
-  .card p{margin:0;color:var(--muted);font-size:14px}
-  .price{font-weight:650;margin-top:14px;font-size:15px}
-  .price small{color:var(--muted);font-weight:400}
-  .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 20px 50px -30px rgba(12,17,23,.45)}
-  .shot iframe{width:100%;height:520px;border:0;display:block}
-  .shot figcaption{padding:12px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between}
-  ol.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  ol.steps li{counter-increment:s;font-size:14px;color:var(--muted)}
-  ol.steps li::before{content:"0" counter(s);display:block;font-weight:650;color:var(--accent);font-size:12px;letter-spacing:.1em;margin-bottom:6px}
-  .contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-  footer{padding:36px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
-  @media(max-width:760px){.grid,ol.steps{grid-template-columns:1fr}nav{display:none}.shot iframe{height:420px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  ::selection{background:#17493f;color:#fff}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
+  .logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-family:var(--serif);font-size:21px;letter-spacing:-.02em}
+  .logo b{font-weight:600}
+  .logo i{width:7px;height:7px;background:var(--warm);border-radius:50%;display:inline-block;transform:translateY(-2px)}
+  nav.desktop{display:flex;gap:28px}
+  nav.desktop a{text-decoration:none;font-size:14px;color:var(--muted);padding:4px 0;border-bottom:1px solid transparent}
+  nav.desktop a:hover{color:var(--ink);border-color:var(--ink)}
+  .head-cta{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:10px 16px;border-radius:999px}
+  .head-cta:hover{background:var(--accent)}
+  .burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:9px 11px;cursor:pointer}
+
+
+  /* hero */
+  .hero{padding:88px 0 72px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 26px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.4vw,76px);line-height:1.02;letter-spacing:-.035em;margin:0 0 26px;max-width:19ch}
+  h1 em{font-style:italic;color:var(--accent)}
+  .lede{font-size:clamp(17px,2vw,20px);line-height:1.6;color:var(--muted);max-width:52ch;margin:0 0 34px}
+  .lede strong{color:var(--ink);font-weight:600}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:999px;border:1px solid transparent;transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:#0f352e}
+  .btn.ghost{border-color:var(--line);background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:#fff}
+  .meta-row{display:flex;flex-wrap:wrap;gap:0;margin-top:56px;border-top:1px solid var(--line)}
+  .meta-row div{flex:1 1 180px;padding:18px 0 0;border-right:1px solid var(--line);padding-right:24px}
+  .meta-row div:last-child{border-right:0}
+  .meta-row b{display:block;font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:-.02em}
+  .meta-row span{font-size:13px;color:var(--muted)}
+
+  /* sections */
+  section{padding:84px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:40px}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,42px);letter-spacing:-.03em;line-height:1.1;margin:0;max-width:22ch}
+  .sec-head p{margin:0;color:var(--muted);font-size:14px;max-width:30ch}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 14px}
+
+  /* showcase */
+  .browser{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);box-shadow:0 40px 80px -60px rgba(16,20,19,.5)}
+  .chrome{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line);background:#fbfaf6}
+  .dots{display:flex;gap:6px}
+  .dots i{width:9px;height:9px;border-radius:50%;background:#d9d4c8;display:block}
+  .urlbar{flex:1;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted);padding:6px 14px;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .devices{display:flex;gap:6px;background:#f1eee7;border-radius:999px;padding:4px}
+  .devices button{border:0;background:transparent;font:inherit;font-size:12px;padding:5px 11px;border-radius:999px;cursor:pointer;color:var(--muted)}
+  .devices button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .frame{background:#eae6dd;padding:0;display:flex;justify-content:center;overflow:hidden}
+  .frame iframe{width:100%;height:560px;border:0;background:#fff;display:block;transition:width .35s ease,height .35s ease}
+  .frame.mobile iframe{width:390px;height:640px;margin:24px 0;border-radius:26px;border:8px solid #1b1f1e}
+  .shot-note{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .shot-note a{color:var(--accent);text-decoration:none;font-weight:600}
+
+  /* services */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+  .svc:hover{transform:translateY(-3px);box-shadow:0 24px 40px -34px rgba(16,20,19,.45)}
+  .svc .num{font-size:12px;letter-spacing:.12em;color:var(--warm);font-weight:700;margin-bottom:18px}
+  .svc h3{font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:-.02em;margin:0 0 8px}
+  .svc p{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+  .svc ul{list-style:none;padding:0;margin:0 0 22px;font-size:14px;color:var(--ink)}
+  .svc ul li{padding:6px 0 6px 22px;position:relative}
+  .svc ul li::before{content:"";position:absolute;left:0;top:14px;width:9px;height:9px;border:1px solid var(--accent);border-radius:50%}
+  .svc .foot{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+  .price{font-family:var(--serif);font-size:24px;letter-spacing:-.02em}
+  .price small{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);letter-spacing:0}
+  .time{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px;white-space:nowrap}
+
+  /* checklist */
+  .checks{background:var(--accent);color:#eef4f0;border-radius:22px;padding:52px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+  .checks h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.12;letter-spacing:-.03em;margin:0 0 14px;color:#fff}
+  .checks p{color:#bcd0c7;margin:0;font-size:15px;max-width:34ch}
+  .checks ol{list-style:none;counter-reset:c;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+  .checks li{counter-increment:c;font-size:14.5px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;gap:12px;align-items:baseline}
+  .checks li::before{content:"0" counter(c);font-size:11px;color:#8fb3a8;letter-spacing:.1em;min-width:20px}
+
+  /* process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+  .step{position:relative;padding-top:22px;border-top:1px solid var(--line)}
+  .step::before{counter-increment:s;content:"Step 0" counter(s);position:absolute;top:-9px;background:var(--paper);padding-right:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);font-weight:700}
+  .step h3{font-size:16px;margin:0 0 6px;letter-spacing:-.01em}
+  .step p{margin:0;font-size:14px;color:var(--muted)}
+
+  /* faq */
+  .faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+  .faq h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.03em;line-height:1.1;margin:0}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  details summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-family:var(--serif);font-size:24px;line-height:1;color:var(--accent);transition:transform .2s ease}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{color:var(--muted);font-size:14.5px;margin:12px 0 0;max-width:56ch}
+
+  /* contact */
+  .contact{background:var(--ink);color:#f3f1ea;border-radius:24px;padding:64px 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .contact .kicker{color:#94a39d}
+  .contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em;margin:0 0 16px;color:#fff}
+  .contact p{color:#a9b7b1;margin:0;font-size:15px;max-width:38ch}
+  .contact-links{display:flex;flex-direction:column;gap:10px}
+  .clink{display:flex;align-items:center;justify-content:space-between;gap:16px;text-decoration:none;padding:16px 18px;border:1px solid rgba(255,255,255,.16);border-radius:12px;font-size:15px;transition:background .15s ease,border-color .15s ease}
+  .clink:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.32)}
+  .clink span{color:#8f9f99;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .clink b{font-weight:600}
+  .pay{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .pay i{font-style:normal;font-size:11px;letter-spacing:.06em;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px 10px;color:#b9c6c0}
+
+  footer{padding:30px 0 40px;color:var(--muted);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer a{text-decoration:none;border-bottom:1px solid var(--line)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+  @media(max-width:900px){
+    .services{grid-template-columns:1fr}
+    .checks{grid-template-columns:1fr;padding:36px;gap:28px}
+    .checks ol{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr;gap:28px}
+    .faq{grid-template-columns:1fr;gap:24px}
+    .contact{grid-template-columns:1fr;padding:40px 28px}
+    .frame iframe{height:440px}
+    .frame.mobile iframe{height:600px;width:330px}
+  }
+  @media(max-width:640px){
+    nav.desktop,.head-cta{display:none}
+    .burger{display:block}
+    .hero{padding:56px 0 44px}
+    .meta-row div{flex-basis:50%;border-right:0}
+    section{padding:60px 0}
+    .steps{grid-template-columns:1fr}
+  }
+  .mobile-nav{display:none;border-bottom:1px solid var(--line);background:var(--paper)}
+  .mobile-nav.open{display:block}
+  .mobile-nav a{display:block;padding:14px 28px;text-decoration:none;border-top:1px solid var(--line);font-size:15px}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-  <div class="brand">Mohammed Mustafa<span>.</span></div>
-  <nav><a href="#work">Sample</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
-</div></header>
 
-<main class="wrap">
-  <h1>Small websites. Working automations. <em>Fixed price.</em></h1>
-  <p class="lede">I build fast, hand-written sites and small tools that remove repetitive work — scoped in one message, delivered in 48 hours, source code included.</p>
-  <div class="contact">
-    <a class="cta" href="#contact">Get a quote</a>
-    <a class="cta alt" href="sample-build.html" target="_blank" rel="noopener">Open sample build</a>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><b>Mohammed Mustafa</b><i></i></a>
+    <nav class="desktop">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#checks">What I fix</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="head-cta" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">☰</button>
   </div>
-  <div class="meta">
-    <span><b>48h</b> delivery</span>
-    <span><b>Fixed</b> price, agreed up front</span>
-    <span><b>You own</b> the code</span>
-    <span><b>Pay</b> after preview</span>
+  <div class="mobile-nav" id="mnav">
+    <a href="#work">Work</a><a href="#services">Services</a><a href="#checks">What I fix</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
   </div>
+</header>
 
-  <section id="work">
-    <h2>Sample build</h2>
-    <figure class="shot" style="margin:0">
-      <iframe src="sample-build.html" title="Sample website build" loading="lazy"></iframe>
-      <figcaption><span>Sample: responsive one-page site, hand-written HTML/CSS — not a client project</span><a href="sample-build.html" target="_blank" rel="noopener">Full page ↗</a></figcaption>
-    </figure>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Independent developer · Bengaluru</p>
+      <h1>The small web work agencies <em>overcharge</em> for.</h1>
+      <p class="lede">One-page websites, site rescues and small automations, built by hand and delivered in 48 hours. <strong>Fixed price agreed up front. You see the result before you pay.</strong></p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:mohammedmusthafa9512@gmail.com?subject=Project%20enquiry">Tell me what you need <span aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="https://wa.me/917795395491" target="_blank" rel="noopener">WhatsApp me</a>
+      </div>
+      <div class="meta-row">
+        <div><b>48h</b><span>Typical delivery</span></div>
+        <div><b>Fixed</b><span>Price agreed in writing</span></div>
+        <div><b>Preview</b><span>Before any payment</span></div>
+        <div><b>Yours</b><span>Code and files included</span></div>
+      </div>
+    </div>
   </section>
 
+  <hr class="rule">
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Sample build</p>
+          <h2>A complete clinic site, written by hand.</h2>
+        </div>
+        <p>Not a client project — a working sample so you can judge the craft before hiring me.</p>
+      </div>
+      <div class="browser reveal">
+        <div class="chrome">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="urlbar">sample-dental-studio.example</div>
+          <div class="devices" role="group" aria-label="Preview size">
+            <button aria-pressed="true" onclick="setDevice('desktop',this)">Desktop</button>
+            <button aria-pressed="false" onclick="setDevice('mobile',this)">Mobile</button>
+          </div>
+        </div>
+        <div class="frame" id="frame"><iframe src="sample-build.html" title="Sample clinic website" loading="lazy"></iframe></div>
+        <div class="shot-note">
+          <span>Responsive one-pager · booking form · opening hours · map details · WhatsApp CTA</span>
+          <a href="sample-build.html" target="_blank" rel="noopener">Open full page ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
   <section id="services">
-    <h2>What I do</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>One-page website</h3>
-        <p>Mobile-first, fast, no framework bloat. Copy layout, contact form, Google Maps, WhatsApp button.</p>
-        <div class="price">$50 / ₹1,500 <small>· 48h</small></div>
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Services</p>
+          <h2>Three ways to work together.</h2>
+        </div>
+        <p>Every quote is fixed before work starts. No hourly surprises, no retainers.</p>
       </div>
-      <div class="card">
-        <h3>Site rescue</h3>
-        <p>Fix the three things costing you enquiries: broken mobile layout, slow load, missing contact path.</p>
-        <div class="price">$90 / ₹2,500 <small>· 72h</small></div>
+      <div class="services">
+        <article class="svc reveal">
+          <div class="num">01</div>
+          <h3>One-page website</h3>
+          <p>A fast, mobile-first page for a business that needs to exist properly online.</p>
+          <ul>
+            <li>Hand-written HTML &amp; CSS, no page builder</li>
+            <li>Tap-to-call, WhatsApp and enquiry form</li>
+            <li>Deployed on free hosting</li>
+          </ul>
+          <div class="foot">
+            <div class="price">₹1,500<small>or $50</small></div>
+            <span class="time">48 hours</span>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="num">02</div>
+          <h3>Site rescue</h3>
+          <p>Your site exists but patients or customers struggle to act on it. I fix the friction.</p>
+          <ul>
+            <li>Mobile layout and tap targets</li>
+            <li>Speed, headings and meta description</li>
+            <li>Booking and contact path</li>
+          </ul>
+          <div class="foot">
+            <div class="price">₹2,500<small>or $90</small></div>
+            <span class="time">72 hours</span>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="num">03</div>
+          <h3>Small automation</h3>
+          <p>One repetitive task turned into a script that runs without you.</p>
+          <ul>
+            <li>CSV cleanup, merging, reporting</li>
+            <li>Data collection and enrichment</li>
+            <li>Spreadsheet or API sync</li>
+          </ul>
+          <div class="foot">
+            <div class="price">₹3,500<small>or $120</small></div>
+            <span class="time">72 hours</span>
+          </div>
+        </article>
       </div>
-      <div class="card">
-        <h3>Small automation</h3>
-        <p>One repetitive task turned into a script: CSV clean-up, report generation, scraping, spreadsheet sync.</p>
-        <div class="price">$120 / ₹3,500 <small>· 72h</small></div>
+    </div>
+  </section>
+
+  <section id="checks">
+    <div class="wrap">
+      <div class="checks reveal">
+        <div>
+          <p class="kicker" style="color:#9dbfb3">The checklist</p>
+          <h2>What I actually look at on a small business site.</h2>
+          <p>Nine concrete things that decide whether a visitor calls you or leaves. I check all of them before quoting.</p>
+        </div>
+        <ol>
+          <li>Does it work with one thumb on a phone?</li>
+          <li>Is the phone number tappable?</li>
+          <li>Is there a WhatsApp or enquiry path?</li>
+          <li>Does the page load in under three seconds?</li>
+          <li>Is there a clear heading and description for Google?</li>
+          <li>Do the forms actually deliver somewhere?</li>
+          <li>Are opening hours and address current?</li>
+          <li>Is the copyright year stale?</li>
+          <li>Does Google get structured business data?</li>
+        </ol>
       </div>
     </div>
   </section>
 
   <section id="process">
-    <h2>Process</h2>
-    <ol class="steps">
-      <li><b>Scope in writing.</b> You describe the job; I reply with exactly what is included, the price, and the date.</li>
-      <li><b>Preview before payment.</b> You see a live preview or sample output first.</li>
-      <li><b>One revision round.</b> Fixes to the agreed scope, no surprises.</li>
-      <li><b>Handover.</b> Source files, deploy notes, and ownership on payment.</li>
-    </ol>
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Process</p>
+          <h2>Simple on purpose.</h2>
+        </div>
+        <p>You should never wonder what happens next or what it costs.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Scope in writing</h3><p>You describe the job. I reply with exactly what is included, the price and the delivery date.</p></div>
+        <div class="step reveal"><h3>Preview first</h3><p>You see the build on a live link before paying anything. If it misses, you owe nothing.</p></div>
+        <div class="step reveal"><h3>One revision</h3><p>Fixes within the agreed scope, usually same day. No surprise invoices.</p></div>
+        <div class="step reveal"><h3>Handover</h3><p>Source files, deploy notes and full ownership on payment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="faq">
+    <div class="wrap faq">
+      <div>
+        <p class="kicker">Questions</p>
+        <h2>The things people ask before saying yes.</h2>
+      </div>
+      <div>
+        <details open>
+          <summary>Why is this so much cheaper than an agency?</summary>
+          <p>Because you are not paying for account managers, discovery workshops or a monthly retainer. The scope is small and fixed, and I work from a tested build process. You pay for the result, not the overhead.</p>
+        </details>
+        <details>
+          <summary>Do I own the code and the design?</summary>
+          <p>Yes. On payment you get the source files and full ownership. There is no lock-in and no licence fee.</p>
+        </details>
+        <details>
+          <summary>What if I don't like the result?</summary>
+          <p>You see a preview before paying. If it does not match the agreed brief, you owe nothing. If it does, one round of revisions is included.</p>
+        </details>
+        <details>
+          <summary>Can you work with my existing website?</summary>
+          <p>Usually yes. If your site is on WordPress or a standard host I can patch it, or rebuild the page and hand you the files to swap in. I will tell you honestly which is cheaper before you commit.</p>
+        </details>
+        <details>
+          <summary>How do I pay?</summary>
+          <p>UPI for clients in India, PayPal for international clients. Payment is due after you approve the preview, before final files are handed over.</p>
+        </details>
+        <details>
+          <summary>How fast can you start?</summary>
+          <p>Usually the same day. Most one-page builds are delivered within 48 hours of receiving your content; rescues and automations within 72.</p>
+        </details>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p class="lede" style="margin-bottom:20px">Tell me what you need and the deadline. I reply with a fixed quote and a delivery date — usually within a few hours.</p>
-    <div class="contact">
-      <a class="cta" href="mailto:mohammedmusthafa9512@gmail.com?subject=Project%20enquiry">mohammedmusthafa9512@gmail.com</a>
-      <a class="cta alt" href="https://wa.me/917795395491">WhatsApp</a>
+    <div class="wrap">
+      <div class="contact reveal">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Tell me the job. I'll send a fixed quote.</h2>
+          <p>Include what you need and your deadline. I reply within a few hours, usually with a price and a start date in the same message.</p>
+        </div>
+        <div class="contact-links">
+          <a class="clink" href="mailto:mohammedmusthafa9512@gmail.com?subject=Project%20enquiry"><span>Email</span><b>mohammedmusthafa9512@gmail.com</b></a>
+          <a class="clink" href="https://wa.me/917795395491" target="_blank" rel="noopener"><span>WhatsApp</span><b>+91 77953 95491</b></a>
+          <a class="clink" href="tel:+917795395491"><span>Call</span><b>+91 77953 95491</b></a>
+          <div class="pay"><i>UPI</i><i>PayPal</i><i>Bengaluru · IST</i></div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap">Independent developer · India · Payments via UPI or PayPal · Mohammed Mustafa, 2026</div></footer>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mohammed Mustafa · Independent developer, Bengaluru</span>
+    <span>Sample work: <a href="sample-build.html" target="_blank" rel="noopener">clinic one-pager</a></span>
+  </div>
+</footer>
+
+<script>
+  function toggleNav(btn){
+    const nav=document.getElementById('mnav');
+    const open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  }
+  function setDevice(mode,btn){
+    const frame=document.getElementById('frame');
+    frame.classList.toggle('mobile', mode==='mobile');
+    document.querySelectorAll('.devices button').forEach(b=>b.setAttribute('aria-pressed', b===btn?'true':'false'));
+  }
+  document.querySelectorAll('#mnav a').forEach(a=>a.addEventListener('click',()=>{
+    document.getElementById('mnav').classList.remove('open');
+  }));
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    }),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+</script>
 </body>
 </html>
