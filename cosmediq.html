@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cosmediq — Skin &amp; hair care in Whitefield, Bengaluru</title>
+<meta name="description" content="Dermatologist-led skin and hair treatments in Whitefield, Bengaluru. Book a consultation with Cosmediq.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234a2c3a'/><text x='32' y='44' font-size='34' font-family='Georgia' fill='%23f6e9e3' text-anchor='middle'>C</text></svg>">
+<style>
+  :root{--plum:#43283a;--plum-2:#5d3a4f;--rose:#c2808f;--blush:#f7ece8;--cream:#fcf9f6;--ink:#2c2026;--mut:#6f6068;--line:#ecdcd6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:ui-serif,Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.02em}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 26px}
+  .previewbar{background:var(--plum);color:#e9d8de;font-size:12px;text-align:center;padding:8px;letter-spacing:.03em}
+  .previewbar b{color:#fff}
+  .previewbar a{color:#f3c9d4}
+  header{position:sticky;top:0;z-index:20;background:rgba(252,249,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--plum);font-family:ui-serif,Georgia,serif;font-size:22px;letter-spacing:-.01em}
+  .logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--rose),var(--plum-2));display:inline-block}
+  nav{display:flex;gap:26px}
+  nav a{color:var(--mut);text-decoration:none;font-size:14px}
+  nav a:hover{color:var(--plum)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--plum);color:#fff;text-decoration:none;padding:13px 22px;border-radius:999px;font-weight:600;font-size:14.5px;border:1px solid transparent}
+  .btn:hover{background:var(--plum-2)}
+  .btn.ghost{background:transparent;color:var(--plum);border-color:var(--line)}
+  .btn.ghost:hover{background:#fff}
+  .hero{padding:78px 0 66px;background:radial-gradient(1200px 400px at 80% -10%, #f3e2e2 0%, transparent 60%)}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0 0 18px}
+  h1{font-size:clamp(38px,5.4vw,62px);line-height:1.03;letter-spacing:-.03em;margin:0 0 20px;color:var(--plum)}
+  h1 em{font-style:italic;color:var(--rose)}
+  .hero p{color:var(--mut);font-size:17px;max-width:46ch;margin:0 0 28px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .note{margin-top:22px;font-size:13px;color:var(--mut)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 30px 60px -50px rgba(67,40,58,.5)}
+  .card h3{margin:0 0 4px;color:var(--plum);font-size:18px}
+  .card p{margin:0 0 16px;color:var(--mut);font-size:13px}
+  .hours{list-style:none;padding:0;margin:0;font-size:14px}
+  .hours li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed var(--line);color:var(--mut)}
+  .hours li:last-child{border:0}
+  .hours b{color:var(--ink);font-weight:600}
+  .metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .metrics .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:24px 26px}
+  .metrics b{display:block;font-family:ui-serif,Georgia,serif;font-size:19px;color:var(--plum)}
+  .metrics span{font-size:13px;color:var(--mut)}
+  section{padding:76px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px}
+  h2{font-size:clamp(26px,3.4vw,38px);margin:0;color:var(--plum);letter-spacing:-.03em;line-height:1.1}
+  .sec-head p{margin:0;color:var(--mut);font-size:14px;max-width:32ch}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;transition:transform .2s ease,box-shadow .2s ease}
+  .svc:hover{transform:translateY(-3px);box-shadow:0 24px 40px -38px rgba(67,40,58,.6)}
+  .svc .n{font-size:11px;letter-spacing:.14em;color:var(--rose);font-weight:700;margin-bottom:14px}
+  .svc h3{font-size:17px;margin:0 0 6px;color:var(--plum)}
+  .svc p{margin:0;color:var(--mut);font-size:14px}
+  .band{background:var(--plum);color:#f2e4e8;padding:64px 0}
+  .band .wrap{display:grid;grid-template-columns:1fr .85fr;gap:44px;align-items:center}
+  .band h2{color:#fff;margin-bottom:14px}
+  .band p{color:#d9bec7;margin:0 0 24px;font-size:15px;max-width:44ch}
+  .band .btn{background:#fff;color:var(--plum)}
+  .band ul{margin:0;padding:0;list-style:none;font-size:14.5px;color:#e6d2d9}
+  .band li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;gap:10px}
+  .band li::before{content:"—";color:var(--rose)}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .visit ul{list-style:none;padding:0;margin:0;font-size:15px}
+  .visit li{padding:11px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+  .visit li b{color:var(--ink);display:inline-block;min-width:92px;font-weight:600}
+  form{display:grid;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+  label{font-size:12.5px;font-weight:600;color:var(--plum);letter-spacing:.02em}
+  input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:14px;background:#fdfbf9}
+  textarea{min-height:84px;resize:vertical}
+  form .btn{border:0;cursor:pointer;justify-content:center}
+  .formnote{font-size:12px;color:var(--mut);margin:0}
+  footer{background:#f7efec;border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  @media(max-width:900px){.hero .wrap,.band .wrap,.split{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.metrics .wrap{grid-template-columns:1fr}nav{display:none}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}h1{font-size:36px}.hero{padding:52px 0 44px}}
+</style>
+</head>
+<body>
+<div class="previewbar">Preview built by <b>Mohammed Mustafa</b> · not the live site · <a href="https://archlinuxaddict.github.io/portfolio-site/">portfolio</a></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#top"><i></i>Cosmediq</a>
+  <nav><a href="#treatments">Treatments</a><a href="#why">Why Cosmediq</a><a href="#visit">Locations</a><a href="#book">Book</a></nav>
+  <a class="btn" href="#book">Book a consultation</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <div>
+    <p class="eyebrow">Whitefield, Bengaluru</p>
+    <h1>Skin and hair care, <em>led by dermatologists.</em></h1>
+    <p>Evidence-based treatments for acne, pigmentation, hair loss and ageing — planned after a proper consultation, not a sales pitch.</p>
+    <div class="actions">
+      <a class="btn" href="#book">Book a consultation</a>
+      <a class="btn ghost" href="https://wa.me/919966475747">WhatsApp the clinic</a>
+    </div>
+    <p class="note">Consultations available this week · Whitefield, Bengaluru</p>
+  </div>
+  <aside class="card">
+    <h3>Clinic hours</h3>
+    <p>Walk-ins subject to availability</p>
+    <ul class="hours">
+      <li><b>Mon – Sat</b><span>10:00 – 19:00</span></li>
+      <li><b>Sunday</b><span>By appointment</span></li>
+      <li><b>Consultation</b><span>Book ahead</span></li>
+      <li><b>Location</b><span>Whitefield</span></li>
+    </ul>
+  </aside>
+</div></div>
+
+<div class="metrics"><div class="wrap">
+  <div><b>Dermatologist-led</b><span>Every treatment plan is reviewed by a doctor</span></div>
+  <div><b>Six core treatments</b><span>Skin, hair and laser under one roof</span></div>
+  <div><b>Three locations</b><span>Bengaluru · Visakhapatnam · Coimbatore</span></div>
+</div></div>
+
+<section id="treatments"><div class="wrap">
+  <div class="sec-head">
+    <h2>Treatments</h2>
+    <p>Focused on the concerns we see most often in Bengaluru.</p>
+  </div>
+  <div class="grid">
+    <article class="svc"><div class="n">01</div><h3>Acne &amp; acne scars</h3><p>Peels, medicated care and scar revision, matched to your skin type.</p></article>
+    <article class="svc"><div class="n">02</div><h3>Pigmentation</h3><p>Melasma, tanning and dark circles assessed before any treatment.</p></article>
+    <article class="svc"><div class="n">03</div><h3>Laser hair removal</h3><p>Course-based sessions with patch tests and clear pricing up front.</p></article>
+    <article class="svc"><div class="n">04</div><h3>Hair fall &amp; PRP</h3><p>Scalp assessment, medical management and PRP where it is indicated.</p></article>
+    <article class="svc"><div class="n">05</div><h3>Anti-ageing</h3><p>Botox and fillers, conservatively dosed and explained before consent.</p></article>
+    <article class="svc"><div class="n">06</div><h3>Facials &amp; hydrafacial</h3><p>Clinic-grade facials for texture, hydration and event preparation.</p></article>
+  </div>
+</div></section>
+
+<div class="band" id="why"><div class="wrap">
+  <div>
+    <h2>What a consultation here looks like.</h2>
+    <p>You should leave knowing what is being treated, how many sessions it takes, and what it costs — before anything starts.</p>
+    <a class="btn" href="#book">Request an appointment</a>
+  </div>
+  <ul>
+    <li>Skin assessment and history, not a menu of packages</li>
+    <li>A written plan with session count and total cost</li>
+    <li>Patch tests and consent before laser or injectables</li>
+    <li>Follow-up review included in treatment courses</li>
+  </ul>
+</div></div>
+
+<section id="visit"><div class="wrap">
+  <div class="sec-head">
+    <h2>Visit Cosmediq</h2>
+    <p>Whitefield, Bengaluru — with clinics in Visakhapatnam and Coimbatore.</p>
+  </div>
+  <div class="split visit">
+    <div>
+      <ul>
+        <li><b>Bengaluru</b>Whitefield, Bengaluru</li>
+        <li><b>Phone</b>+91 99664 75747</li>
+        <li><b>WhatsApp</b>Message the clinic for timings</li>
+        <li><b>Also at</b>Visakhapatnam · Coimbatore</li>
+        <li><b>Payment</b>Card, UPI and cash accepted</li>
+      </ul>
+    </div>
+    <form id="book" onsubmit="event.preventDefault();this.querySelector('.formnote').textContent='Preview form — nothing is sent.';">
+      <label for="n">Name</label><input id="n" placeholder="Your name" required>
+      <label for="p">Phone</label><input id="p" placeholder="+91" required>
+      <label for="t">What would you like to discuss?</label>
+      <select id="t"><option>Acne or acne scars</option><option>Pigmentation</option><option>Laser hair removal</option><option>Hair fall</option><option>Anti-ageing</option><option>Something else</option></select>
+      <label for="m">Preferred day or time</label><textarea id="m" placeholder="Optional"></textarea>
+      <button class="btn" type="submit">Request appointment</button>
+      <p class="formnote"></p>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Cosmediq — preview build</span>
+  <span>Preview by <a href="https://archlinuxaddict.github.io/portfolio-site/" style="color:#43283a">Mohammed Mustafa</a></span>
+</div></footer>
+</body>
+</html>
