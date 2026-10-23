@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pay — Mohammed Mustafa</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--paper:#f6f4ef;--ink:#101413;--muted:#5c625f;--line:#e0dbd0;--accent:#17493f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  h1{font-family:ui-serif,Georgia,serif;font-weight:400;font-size:clamp(32px,5vw,46px);letter-spacing:-.03em;line-height:1.05;margin:0 0 10px}
+  .sub{color:var(--muted);margin:0 0 36px;font-size:15px}
+  .amount{display:flex;align-items:baseline;gap:10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:28px}
+  .amount b{font-family:ui-serif,Georgia,serif;font-size:38px;font-weight:500}
+  .amount span{color:var(--muted);font-size:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+  .card img{width:100%;max-width:240px;height:auto;display:block;margin:0 auto 10px}
+  .card code{display:block;font-size:15px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:8px;margin-top:6px}
+  .paypal{margin-top:18px;display:flex;justify-content:space-between;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:inherit}
+  .paypal:hover{border-color:#c9c2b4}
+  .paypal b{font-weight:600}
+  .paypal span{color:var(--muted);font-size:13px}
+  .steps{margin:34px 0 0;padding:0;list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;padding:14px 0 14px 40px;border-top:1px solid var(--line);position:relative;font-size:15px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:14px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .note{margin-top:26px;font-size:13px;color:var(--muted)}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  a{color:var(--accent)}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Pay for your build</h1>
+  <p class="sub">Scan with any UPI app, or pay by PayPal. Send the confirmation on WhatsApp and I start (or hand over) straight away.</p>
+
+  <div class="amount"><b>₹1,500</b><span>one-page build · or $50 international</span></div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="qr-slc.png" alt="UPI QR code for furjack@slc">
+      <div>UPI ID</div>
+      <code>furjack@slc</code>
+    </div>
+    <div class="card">
+      <img src="qr-ybl.png" alt="UPI QR code for furjack@ybl">
+      <div>UPI ID</div>
+      <code>furjack@ybl</code>
+    </div>
+  </div>
+
+  <a class="paypal" href="https://paypal.me/fgmodss" target="_blank" rel="noopener">
+    <span>International — PayPal</span><b>paypal.me/fgmodss →</b>
+  </a>
+
+  <ol class="steps">
+    <li>Pay ₹1,500 to either UPI ID (or the PayPal link).</li>
+    <li>WhatsApp the payment screenshot to <a href="https://wa.me/917795395491">+91 77953 95491</a>.</li>
+    <li>I confirm and start the build, or hand over the finished files if it is already done.</li>
+  </ol>
+
+  <p class="note">Fixed scope: one responsive page, contact/WhatsApp button, one revision round, source files included. Anything extra is quoted before work starts. If you have paid and something is unclear, message first — I would rather clarify than guess.</p>
+
+  <footer>
+    <span>Mohammed Mustafa · Bengaluru</span>
+    <span><a href="index.html">← back to portfolio</a></span>
+  </footer>
+</div>
+</body>
+</html>
